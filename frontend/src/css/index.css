@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   border: none;
   text-decoration: none;
+  cursor: pointer;
   -webkit-transition: -webkit-box-shadow 0.15s linear;
   transition: -webkit-box-shadow 0.15s linear;
   -o-transition: box-shadow 0.15s linear;
@@ -44,7 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
   font-size: 36px;
-  font-family: 'Poiret One', cursive; }
+  font-family: 'Poiret One', cursive;
+  color: #000000;
+  text-decoration: none; }
 
 .App {
   padding: 20px; }

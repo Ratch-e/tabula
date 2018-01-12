@@ -25,7 +25,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.personActions.fetchPersons();
+    this.props.personActions.fetchPersonById(this.getId());
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,7 +58,7 @@ class Profile extends React.Component {
 
 function mapStateToProps (state) {
     return {
-      profile: state.persons.personList[0]
+      profile: state.persons.personList
     }
   }
   
