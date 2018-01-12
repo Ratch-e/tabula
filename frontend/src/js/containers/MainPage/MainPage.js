@@ -1,7 +1,10 @@
+/**
+ * Главная страница
+ */
 import * as React from "react";
 import Header from "../Header/Header"
-import AddPersonButton from "../../components/MainPage/AddPersonButton"
-
+import AddPersonButton from "./AddPersonButton"
+import PersonsList from "../../components/MainPage/PersonsList"
 
 class MainPage extends React.Component {
   render() {
@@ -12,6 +15,7 @@ class MainPage extends React.Component {
           <div className="main-page__actions">
             <AddPersonButton/>
           </div>
+          <PersonsList/>
         </div>
       </div>
     );

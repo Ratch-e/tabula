@@ -1,3 +1,6 @@
+/**
+ * Кнопка создания нового пользователя
+ */
 import * as React from "react";
 
 class AddPersonButton extends React.Component {
