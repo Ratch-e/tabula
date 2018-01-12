@@ -91,3 +91,47 @@ export function fetchPersonsFailure(error) {
     payload: error
   };
 }
+
+
+/**
+ * Запрос пользователя по ID
+ *
+ * @returns {action}
+ */
+export function fetchPersonById(id) {
+  return function action(dispatch) {
+    dispatch({type: types.FETCH_PERSON_BY_ID});
+
+    const request = axios.get(`/api/users/${id}`);
+    return request.then(
+      response => dispatch(fetchPersonByIdSuccess(response.data)),
+      err => dispatch(fetchPersonByIdFailure(err))
+    );
+  };
+}
+
+/**
+ * Удачный запрос на пользователя
+ *
+ * @param persons
+ * @returns {{type, payload: *}}
+ */
+export function fetchPersonByIdSuccess(person) {
+  return {
+    type: types.FETCH_PERSON_BY_ID_SUCCESS,
+    payload: person
+  };
+}
+
+/**
+ * Ошибка запроса на пользователя
+ *
+ * @param error
+ * @returns {{type, payload: *}}
+ */
+export function fetchPersonByIdFailure(error) {
+  return {
+    type: types.FETCH_PERSON_BY_ID_FAILURE,
+    payload: error
+  };
+}

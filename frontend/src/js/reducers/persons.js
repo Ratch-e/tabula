@@ -58,6 +58,26 @@ export default function persons(state = initialState, action) {
         loading: false,
       };
 
+    /**
+     * Запрос профиля пользователя по апи
+     */
+    case types.FETCH_PERSON_BY_ID:
+    return {
+      ...state,
+      loading: true,
+      error: null,
+    };
+
+    /**
+     * Удачный запрос профиля пользователя по апи
+     */
+    case types.FETCH_PERSON_BY_ID_SUCCESS:
+    return {
+      ...state,
+      loading: false,
+      personList: action.payload
+    };
+
     default:
       return state;
   }
