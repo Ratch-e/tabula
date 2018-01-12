@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  color: #000000; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poiret One', cursive; }
@@ -30,8 +31,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: box-shadow 0.15s linear;
   transition: box-shadow 0.15s linear, -webkit-box-shadow 0.15s linear; }
   .button:hover {
-    -webkit-box-shadow: -2px 2px 0 0 #000000;
-            box-shadow: -2px 2px 0 0 #000000; }
+    -webkit-box-shadow: -3px 4px 4px 0 #6f6767;
+            box-shadow: -3px 4px 4px 0 #6f6767; }
+  .button:active {
+    -webkit-box-shadow: inset -1px 1px 2px 0 #000;
+            box-shadow: inset -1px 1px 2px 0 #000; }
 
 .content {
   padding: 20px;
@@ -91,21 +95,37 @@ h1, h2, h3, h4, h5, h6 {
               box-shadow: 0 3px 5px 0 #377a00;
       outline: none; }
 
-.person-list__button {
-  margin-right: 20px;
-  width: auto;
-  font-size: 14px;
-  background-color: white;
-  cursor: pointer;
+.person-list {
+  margin: 20px 0;
+  padding: 20px;
   border: 1px solid #377a00;
-  padding: 8px 20px;
-  -webkit-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out; }
-  .person-list__button:focus, .person-list__button:hover {
-    outline: none;
-    background-color: #377a00;
-    color: white; }
+  -webkit-box-shadow: -3px 4px 4px 0 #6f6767;
+          box-shadow: -3px 4px 4px 0 #6f6767; }
+  .person-list__item {
+    margin-bottom: 20px;
+    font-size: 20px; }
+    .person-list__item:last-of-type {
+      margin-bottom: 0; }
+  .person-list__link {
+    color: #000000;
+    text-decoration: none; }
+    .person-list__link:hover {
+      text-decoration: underline; }
+  .person-list__button {
+    margin-right: 20px;
+    width: auto;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #377a00;
+    padding: 8px 20px;
+    -webkit-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out; }
+    .person-list__button:focus, .person-list__button:hover {
+      outline: none;
+      background-color: #377a00;
+      color: white; }
 
 .header {
   padding: 20px;

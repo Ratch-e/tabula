@@ -1,4 +1,21 @@
 .person-list
+  margin: 20px 0
+  padding: 20px
+  border: 1px solid $mainColor
+  +shadow()
+  
+  &__item
+    margin-bottom: 20px
+    font-size: 20px
+
+    &:last-of-type
+      margin-bottom: 0
+
+  &__link
+    color: $textColor
+    text-decoration: none
+    &:hover
+      text-decoration: underline
 
   &__button
     margin-right: 20px

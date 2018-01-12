@@ -2,7 +2,7 @@
  * Список пользователей
  */
 import * as React from "react";
-import Person from "../../containers/MainPage/PersonListItem";
+import Person from "../../containers/MainPage/PersonsListItem";
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux';
 import * as personsAction from '../../actions/PersonsActions'
@@ -27,7 +27,7 @@ class PersonsList extends React.Component {
 
   render() {
     return (
-      <div className={"person-list"}>{
+      <div className="person-list">{
         this.generatePersonList()
       }</div>
     );

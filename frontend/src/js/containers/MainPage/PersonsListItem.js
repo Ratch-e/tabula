@@ -17,7 +17,10 @@ class PersonsListItem extends React.Component {
 
   render() {
     return (
-        <a href={`/profile/${this.state.id}`}>{this.getFullname()}</a>
+      <div className="person-list__item">
+        <a className="person-list__link" href={`/profile/${this.state.id}`}>       {this.getFullname()}
+        </a>
+      </div>
     );
   }
 }
