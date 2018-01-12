@@ -8,8 +8,10 @@ class MainPage extends React.Component {
     return (
       <div className="page">
         <Header/>
-        <div className="content">
+        <div className="content main-page">
+          <div className="main-page__actions">
             <AddPersonButton/>
+          </div>
         </div>
       </div>
     );
