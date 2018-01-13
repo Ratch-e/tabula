@@ -44,7 +44,11 @@ export function removePerson(id) {
       payload: id
     });
 
-    axios.delete(`/api/users/${id}`)
+    const request = axios.delete(`/api/users/${id}`);
+
+    return request.then(
+      window.location.href = "/"
+    );
   };
 }
 

@@ -34,8 +34,7 @@ export default function persons(state = initialState, action) {
      */
     case types.REMOVE_PERSON:
       return {
-        ...state,
-        personList: state.personList.filter(item => item._id !== action.payload),
+        state
       };
 
     /**

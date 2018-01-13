@@ -3,7 +3,6 @@
  */
 import * as React from "react";
 import Header from "../Header/Header"
-import AddPersonButton from "./AddPersonButton"
 import PersonsList from "../../components/MainPage/PersonsList"
 
 class MainPage extends React.Component {
@@ -13,7 +12,8 @@ class MainPage extends React.Component {
         <Header/>
         <div className="content main-page">
           <div className="main-page__actions">
-            <AddPersonButton/>
+            <a className="button" href="/new_profile">Добавить анкету</a>
+            <a className="button">Добавить профессию</a>
           </div>
           <PersonsList/>
         </div>
