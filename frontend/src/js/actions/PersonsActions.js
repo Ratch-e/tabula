@@ -8,10 +8,7 @@ import axios from 'axios';
  * @returns {{type: string, payload: *}}
  */
 export function addPerson(result) {
-  return function action(dispatch) {
-    dispatch({
-      type: types.ADD_PERSON
-    });
+  return function action() {
     const request = axios.post('/api/users', {
       name: result.name,
       lastName: result.lastName
@@ -21,9 +18,7 @@ export function addPerson(result) {
       window.location.href = "/"
     );
   };
-
 }
-
 export function addPersonsSuccess(persons) {
   return {
     type: types.API_ADD_PERSON_SUCCESS,
@@ -69,26 +64,12 @@ export function fetchPersons() {
     );
   };
 }
-
-/**
- * Удачный запрос на список пользователей
- *
- * @param persons
- * @returns {{type, payload: *}}
- */
 export function fetchPersonsSuccess(persons) {
   return {
     type: types.FETCH_PERSONS_SUCCESS,
     payload: persons
   };
 }
-
-/**
- * Ошибка запроса на список пользователей
- *
- * @param error
- * @returns {{type, payload: *}}
- */
 export function fetchPersonsFailure(error) {
   return {
     type: types.FETCH_PERSONS_FAILURE,
@@ -113,26 +94,12 @@ export function fetchPersonById(id) {
     );
   };
 }
-
-/**
- * Удачный запрос на пользователя
- *
- * @param persons
- * @returns {{type, payload: *}}
- */
 export function fetchPersonByIdSuccess(person) {
   return {
     type: types.FETCH_PERSON_BY_ID_SUCCESS,
     payload: person
   };
 }
-
-/**
- * Ошибка запроса на пользователя
- *
- * @param error
- * @returns {{type, payload: *}}
- */
 export function fetchPersonByIdFailure(error) {
   return {
     type: types.FETCH_PERSON_BY_ID_FAILURE,

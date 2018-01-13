@@ -28,15 +28,6 @@ export default function persons(state = initialState, action) {
         personList: [...state.personList, action.payload],
         loading: false,
       };
-
-    /**
-     * Удаление пользователя
-     */
-    case types.REMOVE_PERSON:
-      return {
-        state
-      };
-
     /**
      * Запрос списка пользователей по апи
      */
