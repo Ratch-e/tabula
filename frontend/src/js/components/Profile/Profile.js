@@ -28,6 +28,11 @@ class Profile extends React.Component {
     })
   }
 
+  getTestLink() {
+    let domain = window.location.hostname;
+    return `${domain}/test/${this.getId()}`
+  }
+
   getFullName() {
       return `${this.state.lastname} ${this.state.name}`
   }
@@ -56,6 +61,9 @@ class Profile extends React.Component {
                 <div className="profile">
                     <div className="profile__item">
                         <div className="profile__name">{this.getFullName()}</div>
+                    </div>
+                    <div className="profile__item">
+                        <div className="profile__link">{this.getTestLink()}</div>
                     </div>
                     <div className="profile__options">
                         <div className="button button_warning" onClick={this.toggleDeleteModal.bind(this)}>Удалить анкету</div>

@@ -206,3 +206,13 @@ a {
     margin-bottom: 20px; }
   .profile__options {
     margin-top: 60px; }
+  .profile__link {
+    margin-top: 20px;
+    padding: 40px;
+    background-color: #e6e6e6;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    display: inline-block; }
+
+.test__item {
+  margin-bottom: 20px; }
