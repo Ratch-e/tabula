@@ -7,16 +7,21 @@ export default [
     {
         question: "Второй вопрос",
         reverse: false, 
-        category: "Инстроверсия"
+        category: "Интеллект"
     },
     {
-        question: "Третий вопрос - реверс",
-        reverse: true,
+        question: "Третий вопрос",
+        reverse: false,
         category: "Трудолюбие"
     },
     {
         question: "Четвертый вопрос",
         reverse: false,
+        category: "Скрытность"
+    },
+    {
+        question: "Пятый вопрос",
+        reverse: true,
         category: "Скрытность"
     }
 ]

@@ -10,8 +10,7 @@ class Test extends React.Component {
     super(props);
 
     this.state = {
-      answers: [],
-      result: []
+      answers: []
     };
   }
 
@@ -42,9 +41,22 @@ class Test extends React.Component {
   clickedAnswer(e) {
     const num = e.target.dataset.index;
     const value = e.target.value;
-    let arr = [...this.state.answers]
+    let arr = [...this.state.answers];
     arr[num].answer = value;
-    this.setState({ answers: arr })
+    this.setState({ answers: arr });
+  }
+
+  generateResult() {
+    const arr = [...this.state.answers];
+    let result = {};
+    arr.map((item) => {
+      if(result.hasOwnProperty(item.category)) {
+        return result[item.category] = +item.answer + result[item.category];
+      } else {
+        return result[item.category] = +item.answer;
+      }
+    })
+    console.log(result);
   }
 
   renderQuestions(q) {
@@ -54,11 +66,23 @@ class Test extends React.Component {
           <p className="test__question">{question.question}</p>
           <div className="test__actions">
             <label className="test__answer">
-              <input onClick={this.clickedAnswer.bind(this)} data-index={num} type="radio" name={`q${num}`} value={question.reverse ? 0 : 1}/>
+              <input 
+                onClick={this.clickedAnswer.bind(this)} 
+                data-index={num} 
+                type="radio" 
+                name={`q${num}`} 
+                value={question.reverse ? 0 : 1}
+              />
               Да
             </label>
             <label className="test__answer">
-              <input onClick={this.clickedAnswer.bind(this)} data-index={num}type="radio" name={`q${num}`} value={question.reverse ? 1 : 0} />
+              <input 
+                onClick={this.clickedAnswer.bind(this)} 
+                data-index={num}
+                type="radio" 
+                name={`q${num}`} 
+                value={question.reverse ? 1 : 0} 
+              />
               Нет
             </label>
           </div>
@@ -76,7 +100,10 @@ class Test extends React.Component {
         <div className="content">
           <ol className="test">
             {this.renderQuestions(questions)}
-            <button className="button test__submit">Закончить тест</button>
+            <button 
+              className="button test__submit" 
+              onClick={this.generateResult.bind(this)}
+            >Закончить тест</button>
           </ol>
         </div>
       </div>
