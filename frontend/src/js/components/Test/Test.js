@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as classnames from "classnames"
 import Header from "../../containers/Header/Header";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -10,7 +11,8 @@ class Test extends React.Component {
     super(props);
 
     this.state = {
-      answers: []
+      answers: [],
+      error: false
     };
   }
 
@@ -39,21 +41,26 @@ class Test extends React.Component {
   }
 
   clickedAnswer(e) {
+
     const num = e.target.dataset.index;
     const value = e.target.value;
     let arr = [...this.state.answers];
     arr[num].answer = value;
-    this.setState({ answers: arr });
+    this.setState({ answers: arr, error: false });
   }
 
   generateResult() {
     const arr = [...this.state.answers];
     let result = {};
     arr.map((item) => {
-      if(result.hasOwnProperty(item.category)) {
-        return result[item.category] = +item.answer + result[item.category];
+      if(item.answer === "") {
+        this.setState({error: true})
       } else {
-        return result[item.category] = +item.answer;
+        if(result.hasOwnProperty(item.category)) {
+          return result[item.category] = +item.answer + result[item.category];
+        } else {
+          return result[item.category] = +item.answer;
+        }
       }
     })
     console.log(result);
@@ -105,6 +112,7 @@ class Test extends React.Component {
               onClick={this.generateResult.bind(this)}
             >Закончить тест</button>
           </ol>
+          <p className={classnames('error',{'error_hidden': !this.state.error})}>Вы ответили не на все вопросы!</p>
         </div>
       </div>
     );

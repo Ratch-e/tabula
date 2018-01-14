@@ -102,6 +102,11 @@ a {
             align-items: center;
     margin-top: 50px; }
 
+.error {
+  color: red; }
+  .error_hidden {
+    display: none; }
+
 .App {
   padding: 20px; }
 
