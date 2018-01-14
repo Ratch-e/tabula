@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: String,
   lastName: String,
+  params: Schema.Types.Mixed,
   versionKey: false
 });
 
