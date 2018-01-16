@@ -218,6 +218,24 @@ a {
     -webkit-border-radius: 5px;
             border-radius: 5px;
     display: inline-block; }
+  .profile__item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .profile__chart {
+    margin-right: 30px;
+    padding: 20px;
+    -webkit-box-shadow: -1px 1px 4px 0 #3f3f3f;
+            box-shadow: -1px 1px 4px 0 #3f3f3f; }
 
 .test__item {
   margin-bottom: 20px; }

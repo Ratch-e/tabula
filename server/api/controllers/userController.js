@@ -48,8 +48,15 @@ exports.getUser = (req, res) => {
 exports.editUser = (req, res) => {
   User.findById(req.params.user_id, (err, user) => {
     if (err) { res.send(err) }
-    user.name = req.body.name;
-    user.lastName = req.body.lastName;
+    if(req.body.name) {
+      user.name = req.body.name;
+    }
+    if(req.body.lastName) {
+      user.name = req.body.lastName;
+    }
+    if(req.body.params) {
+      user.params = req.body.params;
+    }
     user.save((err) => {
       err ? res.send(err) : res.json(user);
     });

@@ -23,5 +23,30 @@ export default [
         question: "Пятый вопрос",
         reverse: true,
         category: "Скрытность"
+    },
+    {
+        question: "Шестой вопрос",
+        reverse: false,
+        category: "Интроверсия"
+    },
+    {
+        question: "Седьмой вопрос",
+        reverse: false, 
+        category: "Интроверсия"
+    },
+    {
+        question: "Восьмой вопрос",
+        reverse: false,
+        category: "Маниакальность"
+    },
+    {
+        question: "Девятый вопрос",
+        reverse: false,
+        category: "Маниакальность"
+    },
+    {
+        question: "Десятый вопрос",
+        reverse: true,
+        category: "Маниакальность"
     }
 ]

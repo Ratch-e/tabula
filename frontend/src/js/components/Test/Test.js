@@ -54,7 +54,7 @@ class Test extends React.Component {
     let result = {};
     arr.map((item) => {
       if(item.answer === "") {
-        this.setState({error: true})
+        return this.setState({error: true})
       } else {
         if(result.hasOwnProperty(item.category)) {
           return result[item.category] = +item.answer + result[item.category];
@@ -63,7 +63,9 @@ class Test extends React.Component {
         }
       }
     })
-    console.log(result);
+    if(!this.state.error) {
+      this.props.personActions.passTest(this.getId(), result);
+    }
   }
 
   renderQuestions(q) {

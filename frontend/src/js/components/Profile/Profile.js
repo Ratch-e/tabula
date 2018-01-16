@@ -4,6 +4,8 @@ import Modal from "../Common/Modal"
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux';
 import * as personsAction from '../../actions/PersonsActions'
+import Chart from 'chart.js';
+import _ from 'lodash'
 
 class Profile extends React.Component {
   constructor(props) {
@@ -51,6 +53,31 @@ class Profile extends React.Component {
     if(this.state.id !== nextProps.profile._id) {
       this.setState({ id: nextProps.profile._id });
     }
+    if(nextProps.profile.params) {
+      this.createChart(nextProps.profile.params, nextProps.profile.name, nextProps.profile.lastName);
+    }
+  }
+
+  createChart(arr, name, lastname) {
+    const labels = _.keys(arr);
+    const data =  _.values(arr);
+
+    const ctx = this.refs.chart
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: labels,
+        datasets: [{
+            label: `${lastname} ${name}`,
+            borderColor: 'rgb(255, 99, 132)',
+            data: data,
+        }]
+      },
+      options: {
+        responsive: false,
+        maintainAspectRatio: false
+      }
+    })
   }
 
   render() {
@@ -60,7 +87,8 @@ class Profile extends React.Component {
             <div className="content">
                 <div className="profile">
                     <div className="profile__item">
-                        <div className="profile__name">{this.getFullName()}</div>
+                      <canvas className="profile__chart" ref="chart" width="400" height="400"></canvas>
+                      <div className="profile__name">{this.getFullName()}</div>
                     </div>
                     <div className="profile__item">
                         <div className="profile__link">{this.getTestLink()}</div>

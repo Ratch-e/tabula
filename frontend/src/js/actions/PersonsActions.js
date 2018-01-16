@@ -106,3 +106,12 @@ export function fetchPersonByIdFailure(error) {
     payload: error
   };
 }
+
+export function passTest(id, params) {
+  return function action(dispatch) {
+    dispatch({type: types.API_PASSED_TEST});
+    axios.put(`/api/users/${id}`, {
+      params: params
+    });
+  }
+}

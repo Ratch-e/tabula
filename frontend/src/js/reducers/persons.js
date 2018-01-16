@@ -28,6 +28,7 @@ export default function persons(state = initialState, action) {
         personList: [...state.personList, action.payload],
         loading: false,
       };
+
     /**
      * Запрос списка пользователей по апи
      */
@@ -66,6 +67,12 @@ export default function persons(state = initialState, action) {
       ...state,
       loading: false,
       personList: action.payload
+    };
+
+    case types.API_PASSED_TEST:
+    return {
+      ...state,
+      testDone: true
     };
 
     default:

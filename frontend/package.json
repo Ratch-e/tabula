@@ -22,10 +22,12 @@
   },
   "devDependencies": {
     "axios": "^0.17.1",
+    "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^3.3.0",
+    "ramda": "^0.25.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   }
