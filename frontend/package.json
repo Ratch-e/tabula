@@ -22,12 +22,17 @@
   },
   "devDependencies": {
     "axios": "^0.17.1",
+    "bootstrap": "^3.3.7",
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
+    "datatables.net": "^1.10.16",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^3.3.0",
+    "jquery": "^3.2.1",
     "ramda": "^0.25.0",
+    "react-bootstrap-table": "^4.3.1",
+    "react-datatables": "0.0.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   }

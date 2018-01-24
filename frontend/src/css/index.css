@@ -15,11 +15,17 @@ a {
   padding: 10px;
   font-size: 18px;
   border: 1px solid #377a00;
-  width: 400px; }
+  width: 400px;
+  color: #000000;
+  font-weight: normal; }
 
 .label span {
   margin-right: 10px;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 18px;
+  color: #000000;
+  text-align: left;
+  font-weight: normal; }
 
 .button {
   background-color: #377a00;
@@ -157,34 +163,7 @@ a {
       outline: none; }
 
 .person-list {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #377a00; }
-  .person-list__item {
-    margin-bottom: 20px;
-    font-size: 20px; }
-    .person-list__item:last-of-type {
-      margin-bottom: 0; }
-  .person-list__link {
-    color: #000000;
-    text-decoration: none; }
-    .person-list__link:hover {
-      text-decoration: underline; }
-  .person-list__button {
-    margin-right: 20px;
-    width: auto;
-    font-size: 14px;
-    background-color: white;
-    cursor: pointer;
-    border: 1px solid #377a00;
-    padding: 8px 20px;
-    -webkit-transition: all .15s ease-in-out;
-    -o-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out; }
-    .person-list__button:focus, .person-list__button:hover {
-      outline: none;
-      background-color: #377a00;
-      color: white; }
+  margin-top: 40px; }
 
 .header {
   padding: 20px;

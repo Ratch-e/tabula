@@ -15,6 +15,7 @@ class Profile extends React.Component {
       name: "",
       lastname: "",
       id: "",
+      passedTest:false,
       modalDelete: false
     };
   }
@@ -54,6 +55,7 @@ class Profile extends React.Component {
       this.setState({ id: nextProps.profile._id });
     }
     if(nextProps.profile.params) {
+      this.setState({passedTest:true})
       this.createChart(nextProps.profile.params, nextProps.profile.name, nextProps.profile.lastName);
     }
   }
