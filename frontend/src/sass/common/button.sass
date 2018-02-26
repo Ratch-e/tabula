@@ -1,25 +1,25 @@
 .button
-    background-color: $mainColor
-    display: inline-block
-    padding: 10px 40px
+  background-color: $mainColor
+  display: inline-block
+  padding: 10px 40px
+  color: #ffffff
+  font-size: 16px
+  border: none
+  text-decoration: none
+  cursor: pointer
+  margin-right: 20px
+  +anim(box-shadow)
+
+  &:last-child
+    margin-right: 0
+
+  &:hover
+    +shadow()
     color: #ffffff
-    font-size: 16px
-    border: none
     text-decoration: none
-    cursor: pointer
-    margin-right: 20px
-    +anim(box-shadow)
 
-    &:last-child
-        margin-right: 0
+  &:active
+    +inner-shadow()
 
-    &:hover
-        +shadow()
-        color: #ffffff
-        text-decoration: none
-
-    &:active
-        +inner-shadow()
-
-    &_warning
-        background-color: $warningColor
+  &_warning
+    background-color: $warningColor
