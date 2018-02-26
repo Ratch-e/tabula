@@ -3,6 +3,7 @@ import Header from "../../containers/Header/Header"
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as personsAction from '../../actions/PersonsActions'
+import {Helmet} from "react-helmet";
 
 
 class ProfileCreate extends React.Component {
@@ -23,7 +24,7 @@ class ProfileCreate extends React.Component {
     let result = {
       name: name,
       lastName: lastName
-    }
+    };
 
     //Если не пробел и не пустое - сохранить в стор
     if (name.trim().length && lastName.trim().length) {
@@ -46,6 +47,12 @@ class ProfileCreate extends React.Component {
   render() {
     return (
       <div className="page">
+
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Новый профиль - Tabula</title>
+        </Helmet>
+
         <Header/>
         <div className="content profile">
           <div className="profile__input-row">

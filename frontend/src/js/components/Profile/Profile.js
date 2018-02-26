@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Helmet} from "react-helmet";
 import Header from "../../containers/Header/Header"
 import Modal from "../Common/Modal"
 import {bindActionCreators} from 'redux'
@@ -99,6 +100,12 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="page">
+
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{this.getFullName()} - Tabula</title>
+        </Helmet>
+
         <Header/>
         <div className="content">
           <div className="profile">
