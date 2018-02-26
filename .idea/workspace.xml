@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78e1f7af-a408-4313-a9e5-94233559d4f1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+    <list default="true" id="78e1f7af-a408-4313-a9e5-94233559d4f1" name="Default" comment="feat(app): добавлено readme и рефакторинг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/index.css" afterPath="$PROJECT_DIR$/frontend/src/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/js/components/Common/Modal.js" afterPath="$PROJECT_DIR$/frontend/src/js/components/Common/Modal.js" />
       <change beforePath="$PROJECT_DIR$/frontend/src/js/components/Profile/Profile.js" afterPath="$PROJECT_DIR$/frontend/src/js/components/Profile/Profile.js" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/sass/common/modal.sass" afterPath="$PROJECT_DIR$/frontend/src/sass/common/modal.sass" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,17 +20,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/api/routes/users.js">
+      <file leaf-file-name="Profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/js/components/Profile/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-              <folding />
+            <state relative-caret-position="623">
+              <caret line="91" column="18" lean-forward="false" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -48,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="512">
+              <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -128,6 +125,8 @@
         <option value="$PROJECT_DIR$/frontend/src/js/routes.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/frontend/src/js/components/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -191,6 +190,24 @@
             <path>
               <item name="tabula" type="b2602c69:ProjectViewProjectNode" />
               <item name="tabula" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabula" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabula" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabula" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabula" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabula" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabula" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,8 +291,16 @@
       <workItem from="1514469715019" duration="721000" />
       <workItem from="1514835120458" duration="28967000" />
       <workItem from="1516878837282" duration="32000" />
-      <workItem from="1519660337808" duration="1299000" />
+      <workItem from="1519660337808" duration="2779000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(app): добавлено readme и рефакторинг">
+      <created>1519661820138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519661820138</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -287,7 +312,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54324000" />
+    <option name="totallyTimeSpent" value="55804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,6 +352,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(app): добавлено readme и рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app): добавлено readme и рефакторинг" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -334,20 +363,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/build/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -647,6 +662,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -655,11 +678,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/routes/users.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/js/components/Profile/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="623">
+          <caret line="91" column="18" lean-forward="false" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,6 +696,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
