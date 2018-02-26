@@ -18,7 +18,7 @@ class Modal extends React.Component {
   getId() {
     return this.props.id;
   }
-
+  
   render() {
     return (
       <div className={classnames('modal',{'modal_hidden': !this.props.active})}>

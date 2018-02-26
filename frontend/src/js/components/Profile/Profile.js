@@ -18,6 +18,8 @@ class Profile extends React.Component {
       passedTest:false,
       modalDelete: false
     };
+    
+    this.toggleDeleteModal = this.toggleDeleteModal.bind(this);
   }
 
   getId() {
@@ -103,7 +105,7 @@ class Profile extends React.Component {
             </div>
             <Modal 
               active={this.state.modalDelete} 
-              toggle={this.toggleDeleteModal.bind(this)}
+              toggle={this.toggleDeleteModal}
               id={this.state.id}/>
         </div>
     );

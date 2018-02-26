@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-//tools
 const routes = require('./api/routes/users');
 
 const tabula = express();

@@ -65,7 +65,8 @@ a {
   text-decoration: none; }
 
 .modal {
-  position: fixed; }
+  position: fixed;
+  display: block; }
   .modal_hidden {
     display: none; }
   .modal__overlay {
