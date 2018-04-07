@@ -4,7 +4,7 @@ import axios from 'axios';
 /**
  * Добавление пользователя в список
  *
- * @param name
+ * @param result
  * @returns {{type: string, payload: *}}
  */
 export function addPerson(result) {
@@ -19,7 +19,36 @@ export function addPerson(result) {
     );
   };
 }
+
 export function addPersonsSuccess(persons) {
+  return {
+    type: types.API_ADD_PERSON_SUCCESS,
+    payload: persons
+  };
+}
+
+/**
+ * Редактирование пользователя
+ *
+ * @param result
+ * @returns {{type: string, payload: *}}
+ */
+export function editPerson(id, result) {
+  return function action() {
+    const request = axios.put(`/api/users/${id}`, {
+      name: result.name,
+      lastName: result.lastName,
+      birthday: result.birthday || undefined,
+      occupation: result.occupation || ''
+    });
+
+    return request.then(
+      window.location.href = `/profile/${id}`
+    );
+  };
+}
+
+export function editPersonsSuccess(persons) {
   return {
     type: types.API_ADD_PERSON_SUCCESS,
     payload: persons
@@ -29,7 +58,7 @@ export function addPersonsSuccess(persons) {
 /**
  * Удаление пользователя из списка
  *
- * @param name
+ * @param id
  * @returns {{type: string, payload: *}}
  */
 export function removePerson(id) {
@@ -107,6 +136,13 @@ export function fetchPersonByIdFailure(error) {
   };
 }
 
+/**
+ * Прохождение теста
+ *
+ * @param id
+ * @param params
+ * @returns {action}
+ */
 export function passTest(id, params) {
   return function action(dispatch) {
     dispatch({type: types.API_PASSED_TEST});

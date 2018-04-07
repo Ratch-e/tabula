@@ -13,7 +13,7 @@ class MainPage extends React.Component {
         <div className="content main-page">
           <div className="main-page__actions">
             <a className="button" href="/new_profile">Добавить анкету</a>
-            <a className="button">Добавить профессию</a>
+            <a className="button" href="/occupations">Добавить профессию</a>
           </div>
           <PersonsList/>
         </div>

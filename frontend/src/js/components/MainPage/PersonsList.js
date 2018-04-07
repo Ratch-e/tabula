@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 class PersonsList extends React.Component {
 
   generatePersonList() {
-    //Список людей из стора
     const list = this.props.persons.personList;
     let persons = list.map((person, key) => {
       let params = person.params || {};
@@ -21,6 +20,7 @@ class PersonsList extends React.Component {
         id: key + 1,
         name:`${person.lastName} ${person.name}`,
         user_id: person._id,
+        occupation: person.occupation,
         ...params,
         catNames: catNames
       }
@@ -35,19 +35,32 @@ class PersonsList extends React.Component {
       key= '1'
       dataField='id' 
       dataSort={ true }
+      width='50px'
       >№</TableHeaderColumn>,
+
       <TableHeaderColumn 
       key='2'
       dataField='name'
       dataSort={ true }
       dataFormat={ linkFormatter }
-      >Имя</TableHeaderColumn>
+      width='300px'
+      >Имя</TableHeaderColumn>,
+
+      <TableHeaderColumn
+      key='3'
+      dataField='occupation'
+      dataSort={ true }
+      >Должность</TableHeaderColumn>
     ];
 
     if(persons.length) {
       for (const item in persons[0].catNames) {
         arr.push(
-          <TableHeaderColumn key={ item + 2 } dataField={persons[0].catNames[item]} dataSort={ true }>{ persons[0].catNames[item] }</TableHeaderColumn>
+          <TableHeaderColumn
+            key={ item + 3 }
+            dataField={persons[0].catNames[item]}
+            dataSort={ true }
+          >{ persons[0].catNames[item] }</TableHeaderColumn>
         );
       }
     }
@@ -56,10 +69,15 @@ class PersonsList extends React.Component {
       <BootstrapTable
         keyField='id'
         data={persons}
-        search={true}
-        pagination={true}
+        search
+        searchPlaceholder='Найти...'
+        exportCSV
+        csvFileName='Таблица_работников'
+        ignoreSinglePage
+        pagination
         striped
-        hover>
+        hover
+      >
         {
           arr
         }

@@ -69,6 +69,10 @@ export default function persons(state = initialState, action) {
       personList: action.payload
     };
 
+
+    /**
+     * Установка флага что тест пройден
+     */
     case types.API_PASSED_TEST:
     return {
       ...state,

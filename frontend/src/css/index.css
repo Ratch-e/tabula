@@ -119,6 +119,13 @@ a {
   .error_hidden {
     display: none; }
 
+.select {
+  width: 400px;
+  color: #000000;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: normal; }
+
 .App {
   padding: 20px; }
 
@@ -194,7 +201,7 @@ a {
   .profile__name {
     font-size: 30px; }
   .profile__label-name {
-    width: 100px; }
+    width: 150px; }
   .profile__input-row {
     margin-bottom: 20px; }
   .profile__options {

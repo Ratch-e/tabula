@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import * as personsAction from '../../actions/PersonsActions'
 import Chart from 'chart.js';
 import _ from 'lodash'
+import moment from 'moment';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class Profile extends React.Component {
 
     this.state = {
       name: "",
-      lastname: "",
+      lastName: "",
       id: "",
+      occupation: "Должность не указана",
+      birthday: 'Дата рождения не указана',
       passedTest: false,
       modalDelete: false
     };
@@ -40,7 +43,15 @@ class Profile extends React.Component {
   }
 
   getFullName() {
-    return `${this.state.lastname} ${this.state.name}`;
+    return `${this.state.lastName} ${this.state.name}`;
+  }
+
+  getOccupation() {
+    return this.state.occupation;
+  }
+
+  getBirthday() {
+    return moment(this.state.birthday).format("DD.MM.YYYY");
   }
 
   componentDidMount() {
@@ -51,8 +62,14 @@ class Profile extends React.Component {
     if (this.state.name !== nextProps.profile.name) {
       this.setState({name: nextProps.profile.name});
     }
-    if (this.state.lastname !== nextProps.profile.lastname) {
-      this.setState({lastname: nextProps.profile.lastName});
+    if (this.state.lastName !== nextProps.profile.lastName) {
+      this.setState({lastName: nextProps.profile.lastName});
+    }
+    if (this.state.occupation !== nextProps.profile.occupation) {
+      this.setState({occupation: nextProps.profile.occupation});
+    }
+    if (this.state.birthday !== nextProps.profile.birthday) {
+      this.setState({birthday: nextProps.profile.birthday});
     }
     if (this.state.id !== nextProps.profile._id) {
       this.setState({id: nextProps.profile._id});
@@ -63,7 +80,7 @@ class Profile extends React.Component {
     }
   }
 
-  createChart(arr, name, lastname) {
+  createChart(arr, name, lastName) {
     const labels = _.keys(arr);
     const data = _.values(arr);
 
@@ -73,7 +90,7 @@ class Profile extends React.Component {
       data: {
         labels: labels,
         datasets: [{
-          label: `${lastname} ${name}`,
+          label: `${lastName} ${name}`,
           borderColor: '#377a00',
           pointBorderColor: '#377a00',
           pointRadius: 6,
@@ -111,14 +128,18 @@ class Profile extends React.Component {
           <div className="profile">
             <div className="profile__item">
               <canvas className="profile__chart" ref="chart" width="400" height="400"></canvas>
-              <div className="profile__name">{this.getFullName()}</div>
+              <div className="profile__block">
+                <div className="profile__name">{this.getFullName()}</div>
+                <div className="profile__text">{this.getBirthday()}</div>
+                <div className="profile__text">{this.getOccupation()}</div>
+              </div>
             </div>
             <div className="profile__item">
               <div className="profile__link">{this.getTestLink()}</div>
             </div>
             <div className="profile__options">
               <div className="button button_warning" onClick={this.toggleDeleteModal.bind(this)}>Удалить анкету</div>
-              <div className="button">Редактировать анкету</div>
+              <a className="button" href={`/edit/${this.getId()}`}>Редактировать анкету</a>
             </div>
           </div>
         </div>

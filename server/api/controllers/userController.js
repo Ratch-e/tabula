@@ -10,6 +10,7 @@ exports.addUser = (req, res) => {
   const user = new User;
   user.name = req.body.name;
   user.lastName = req.body.lastName;
+  user.occupation = 'Должность не указана';
   user.save((err) => {
     err ? res.send(err) : res.json(user);
   })
@@ -47,16 +48,25 @@ exports.getUser = (req, res) => {
  */
 exports.editUser = (req, res) => {
   User.findById(req.params.user_id, (err, user) => {
+
     if (err) { res.send(err) }
+
     if(req.body.name) {
       user.name = req.body.name;
     }
     if(req.body.lastName) {
-      user.name = req.body.lastName;
+      user.lastName = req.body.lastName;
+    }
+    if(req.body.birthday) {
+      user.birthday = req.body.birthday;
+    }
+    if(req.body.occupation) {
+      user.occupation = req.body.occupation;
     }
     if(req.body.params) {
       user.params = req.body.params;
     }
+
     user.save((err) => {
       err ? res.send(err) : res.json(user);
     });

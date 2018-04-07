@@ -4,7 +4,7 @@ import Header from "../../containers/Header/Header";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import * as personsAction from "../../actions/PersonsActions";
-import questions from "../../test";
+import questions from "../../test-questions";
 import {Helmet} from "react-helmet";
 
 class Test extends React.Component {
@@ -23,6 +23,7 @@ class Test extends React.Component {
   }
 
   componentDidMount() {
+    //получаем id пользователя, проходящего тест
     this.props.personActions.fetchPersonById(this.getId());
 
     questions.map((question) => {
