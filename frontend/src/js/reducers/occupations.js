@@ -49,6 +49,23 @@ export default function occupations(state = initialState, action) {
         loading: false,
       };
 
+    /**
+     * Удаление должности
+     */
+    case types.DELETE_OCCUPATION:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+
+    case types.DELETE_OCCUPATION_SUCCESS:
+      return {
+        ...state,
+        occupationsList: state.occupationsList.filter(item => item._id !== action.payload),
+        loading: false,
+      };
+
     default:
       return state;
   }

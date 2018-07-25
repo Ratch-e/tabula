@@ -24,10 +24,8 @@ class OccupationCreate extends React.Component {
 
   generateOccupations() {
     const occupations = this.props.occupations.occupationsList;
-    const list = occupations.map((item, key) => <li key={key}>{item.title}
-      <button onClick={this.onRemoveClick.bind(this)}>удалить</button>
-    </li>);
-    return <ul>{list}</ul>
+    const list = occupations.map((item, key) => <li className="list__item" key={key}><button className="button button_small" onClick={() => this.onRemoveClick(item._id)}>удалить</button>{item.title}</li>);
+    return <ul className="list">{list}</ul>
   }
 
   handleTitleChange(e) {
@@ -36,10 +34,11 @@ class OccupationCreate extends React.Component {
 
   onSaveClick() {
     this.props.occupationActions.addOccupation(this.state.title);
+    this.setState({title: ''});
   }
 
-  onRemoveClick() {
-    this.props.occupationActions.deleteOccupation(this.state.title);
+  onRemoveClick(id) {
+    this.props.occupationActions.deleteOccupation(id);
   }
 
   render() {

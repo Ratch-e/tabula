@@ -54,6 +54,16 @@ a {
             box-shadow: inset -1px 1px 2px 0 #000; }
   .button_warning {
     background-color: #ff3c01; }
+  .button_small {
+    padding: 5px;
+    background-color: #ffffff;
+    border: 1px solid #377a00;
+    color: #377a00;
+    margin: 5px; }
+    .button_small:hover {
+      color: #377a00; }
+    .button_small:last-child {
+      margin: 5px; }
 
 .content {
   padding: 20px;
@@ -125,6 +135,12 @@ a {
   padding: 10px;
   font-size: 18px;
   font-weight: normal; }
+
+.list {
+  list-style-type: none;
+  padding: 0; }
+  .list__item {
+    font-size: 18px; }
 
 .App {
   padding: 20px; }
@@ -234,3 +250,11 @@ a {
 
 .test__item {
   margin-bottom: 20px; }
+
+.test__answer {
+  margin-right: 10px; }
+  .test__answer input {
+    margin-right: 4px; }
+
+.recommendations {
+  display: block; }

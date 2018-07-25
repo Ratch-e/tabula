@@ -24,7 +24,7 @@ router.route('/occupation')
   .get(occupationController.getAllOccupations)
   .post(occupationController.addOccupation);
 
-router.route('/occupation/:user_id')
+router.route('/occupation/:occupation_id')
   .get(occupationController.getOccupation)
   .delete(occupationController.deleteOccupation);
 

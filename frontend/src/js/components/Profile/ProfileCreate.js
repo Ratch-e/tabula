@@ -1,20 +1,19 @@
 import * as React from "react";
-import Header from "../../containers/Header/Header"
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import * as personsAction from '../../actions/PersonsActions'
-import {Helmet} from "react-helmet";
-
+import Header from "../../containers/Header/Header";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as personsAction from "../../actions/PersonsActions";
+import { Helmet } from "react-helmet";
 
 class ProfileCreate extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      lastName: '',
+      name: "",
+      lastName: "",
       validated: true
-    }
+    };
   }
 
   onSaveClick() {
@@ -30,73 +29,80 @@ class ProfileCreate extends React.Component {
     if (name.trim().length && lastName.trim().length) {
       this.props.personActions.addPerson(result);
     } else {
-      this.setState({validated: false});
+      this.setState({ validated: false });
     }
   }
 
   handleNameChange(e) {
-    this.setState({validated: true});
-    this.setState({name: e.target.value});
+    this.setState({ validated: true });
+    this.setState({ name: e.target.value });
   }
 
   handleLastNameChange(e) {
-    this.setState({validated: true});
-    this.setState({lastName: e.target.value});
+    this.setState({ validated: true });
+    this.setState({ lastName: e.target.value });
   }
 
   render() {
     return (
       <div className="page">
-
         <Helmet>
           <meta charSet="utf-8" />
           <title>Новый профиль - Tabula</title>
         </Helmet>
 
-        <Header/>
+        <Header />
         <div className="content profile">
           <div className="profile__input-row">
             <label className="label">
               <span className="profile__label-name">*Фамилия:</span>
-              <input 
-              className="input"
-              type="text"
-              value={this.state.lastName}
-              onChange={this.handleLastNameChange.bind(this)}></input>
+              <input
+                className="input"
+                type="text"
+                value={this.state.lastName}
+                onChange={this.handleLastNameChange.bind(this)}
+              />
             </label>
           </div>
           <div className="profile__input-row">
             <label className="label">
               <span className="profile__label-name">*Имя:</span>
-              <input 
+              <input
                 className="input"
                 type="text"
                 value={this.state.name}
-                onChange={this.handleNameChange.bind(this)}></input>
+                onChange={this.handleNameChange.bind(this)}
+              />
             </label>
           </div>
           <div className="profile__options">
-            <button className="button" onClick={this.onSaveClick.bind(this)}>Сохранить</button>
+            <button className="button" onClick={this.onSaveClick.bind(this)}>
+              Сохранить
+            </button>
           </div>
-          {
-            this.state.validated ? <div className="error"></div> : <div className="error">Необходимо заполнить все обязательные поля(*)</div>
-          }
+          {this.state.validated ? (
+            <div className="error" />
+          ) : (
+            <div className="error">
+              Необходимо заполнить все обязательные поля(*)
+            </div>
+          )}
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     persons: state.persons
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     personActions: bindActionCreators(personsAction, dispatch)
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileCreate);

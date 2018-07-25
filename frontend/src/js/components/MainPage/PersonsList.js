@@ -43,7 +43,7 @@ class PersonsList extends React.Component {
       dataField='name'
       dataSort={ true }
       dataFormat={ linkFormatter }
-      width='300px'
+      width='150'
       >Имя</TableHeaderColumn>,
 
       <TableHeaderColumn

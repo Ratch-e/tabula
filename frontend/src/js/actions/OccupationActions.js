@@ -50,12 +50,36 @@ export function fetchOccupations() {
     );
   };
 }
-export function fetchOccupationsSuccess(persons) {
+
+export function fetchOccupationsSuccess(occupations) {
   return {
     type: types.FETCH_OCCUPATIONS_SUCCESS,
-    payload: persons
+    payload: occupations
   };
 }
 
+export function deleteOccupation(id) {
+  return function action(dispatch) {
+    dispatch({
+      type: types.DELETE_OCCUPATION,
+      payload: id
+    });
+
+    const request = axios.delete(`/api/occupation/${id}`);
+
+    return request.then(
+      response => dispatch(deleteOccupationSuccess(id)),
+      err => console.log(err)
+    );
+
+  };
+}
+
+export function deleteOccupationSuccess(id) {
+  return {
+    type: types.DELETE_OCCUPATION_SUCCESS,
+    payload: id
+  };
+}
 
 
