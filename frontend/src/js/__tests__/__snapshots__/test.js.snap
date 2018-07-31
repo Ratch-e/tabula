@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Шапка Рендерится корректно 1`] = `
+<div
+  className="header"
+>
+  <a
+    className="logo"
+    href="/"
+  >
+    Tabula
+  </a>
+</div>
+`;

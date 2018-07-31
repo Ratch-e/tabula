@@ -1,7 +1,7 @@
 /**
  * @type {{personList: Array}} - Пользователи
  */
-import * as types from '../constants'
+import * as types from '../constants';
 
 const initialState = {
   personList: [],
@@ -10,16 +10,14 @@ const initialState = {
 };
 
 export default function persons(state = initialState, action) {
-
   switch (action.type) {
-
     /**
      * Добавление пользователя
      */
     case types.ADD_PERSON:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
 
     case types.API_ADD_PERSON_SUCCESS:
@@ -53,34 +51,32 @@ export default function persons(state = initialState, action) {
      * Запрос профиля пользователя по апи
      */
     case types.FETCH_PERSON_BY_ID:
-    return {
-      ...state,
-      loading: true,
-      error: null,
-    };
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
 
     /**
      * Удачный запрос профиля пользователя по апи
      */
     case types.FETCH_PERSON_BY_ID_SUCCESS:
-    return {
-      ...state,
-      loading: false,
-      personList: action.payload
-    };
-
+      return {
+        ...state,
+        loading: false,
+        personList: action.payload,
+      };
 
     /**
      * Установка флага что тест пройден
      */
     case types.API_PASSED_TEST:
-    return {
-      ...state,
-      testDone: true
-    };
+      return {
+        ...state,
+        testDone: true,
+      };
 
     default:
       return state;
   }
-
 }

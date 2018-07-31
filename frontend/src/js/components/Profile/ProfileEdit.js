@@ -1,23 +1,23 @@
-import * as React from "react";
-import Header from "../../containers/Header/Header";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import * as personsAction from "../../actions/PersonsActions";
-import * as occupationAction from "../../actions/OccupationActions";
-import { Helmet } from "react-helmet";
-import moment from "moment";
+import * as React from 'react';
+import Header from '../../containers/Header/Header';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as personsAction from '../../actions/PersonsActions';
+import * as occupationAction from '../../actions/OccupationActions';
+import { Helmet } from 'react-helmet';
+import moment from 'moment';
 
 class ProfileEdit extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      lastName: "",
-      id: "",
-      birthday: "",
-      occupation: "",
-      validated: true
+      name: '',
+      lastName: '',
+      id: '',
+      birthday: '',
+      occupation: '',
+      validated: true,
     };
   }
 
@@ -56,15 +56,9 @@ class ProfileEdit extends React.Component {
    */
   generateOccupations() {
     const occupations = this.props.occupations.occupationsList;
-    const list = occupations.map((item, key) => (
-      <option key={key + 1}>{item.title}</option>
-    ));
+    const list = occupations.map((item, key) => <option key={key + 1}>{item.title}</option>);
     return (
-      <select
-        className="select"
-        onChange={this.change.bind(this)}
-        value={this.state.occupation}
-      >
+      <select className="select" onChange={this.change.bind(this)} value={this.state.occupation}>
         <option key={1}>Должность не указана</option>
         {list}
       </select>
@@ -82,7 +76,7 @@ class ProfileEdit extends React.Component {
    */
   getId() {
     let url = window.location.pathname;
-    return url.substring(url.lastIndexOf("/") + 1);
+    return url.substring(url.lastIndexOf('/') + 1);
   }
 
   onSaveClick() {
@@ -95,7 +89,7 @@ class ProfileEdit extends React.Component {
       name,
       lastName,
       occupation,
-      birthday
+      birthday,
     };
 
     if (name.trim().length && lastName.trim().length) {
@@ -160,7 +154,7 @@ class ProfileEdit extends React.Component {
               <input
                 className="input"
                 type="date"
-                value={moment(this.state.birthday).format("YYYY-MM-DD")}
+                value={moment(this.state.birthday).format('YYYY-MM-DD')}
                 onChange={this.handleBirthdayChange.bind(this)}
               />
             </label>
@@ -179,9 +173,7 @@ class ProfileEdit extends React.Component {
           {this.state.validated ? (
             <div className="error" />
           ) : (
-            <div className="error">
-              Необходимо заполнить все обязательные поля(*)
-            </div>
+            <div className="error">Необходимо заполнить все обязательные поля(*)</div>
           )}
         </div>
       </div>
@@ -192,15 +184,18 @@ class ProfileEdit extends React.Component {
 function mapStateToProps(state) {
   return {
     person: state.persons,
-    occupations: state.occupations
+    occupations: state.occupations,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     personActions: bindActionCreators(personsAction, dispatch),
-    occupationActions: bindActionCreators(occupationAction, dispatch)
+    occupationActions: bindActionCreators(occupationAction, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileEdit);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ProfileEdit);

@@ -1,18 +1,18 @@
-import * as React from "react";
-import Header from "../../containers/Header/Header";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import * as personsAction from "../../actions/PersonsActions";
-import { Helmet } from "react-helmet";
+import * as React from 'react';
+import Header from '../../containers/Header/Header';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as personsAction from '../../actions/PersonsActions';
+import { Helmet } from 'react-helmet';
 
 class ProfileCreate extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      lastName: "",
-      validated: true
+      name: '',
+      lastName: '',
+      validated: true,
     };
   }
 
@@ -22,7 +22,7 @@ class ProfileCreate extends React.Component {
     let lastName = this.state.lastName;
     let result = {
       name: name,
-      lastName: lastName
+      lastName: lastName,
     };
 
     //Если не пробел и не пустое - сохранить в стор
@@ -83,9 +83,7 @@ class ProfileCreate extends React.Component {
           {this.state.validated ? (
             <div className="error" />
           ) : (
-            <div className="error">
-              Необходимо заполнить все обязательные поля(*)
-            </div>
+            <div className="error">Необходимо заполнить все обязательные поля(*)</div>
           )}
         </div>
       </div>
@@ -95,14 +93,17 @@ class ProfileCreate extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    persons: state.persons
+    persons: state.persons,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    personActions: bindActionCreators(personsAction, dispatch)
+    personActions: bindActionCreators(personsAction, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileCreate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ProfileCreate);

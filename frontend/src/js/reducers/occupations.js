@@ -1,7 +1,7 @@
 /**
  * @type {{personList: Array}} - Должности
  */
-import * as types from '../constants'
+import * as types from '../constants';
 
 const initialState = {
   occupationsList: [],
@@ -10,16 +10,14 @@ const initialState = {
 };
 
 export default function occupations(state = initialState, action) {
-
   switch (action.type) {
-
     /**
      * Добавление должности
      */
     case types.ADD_OCCUPATION:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
 
     case types.ADD_OCCUPATION_SUCCESS:
@@ -39,9 +37,6 @@ export default function occupations(state = initialState, action) {
         error: null,
       };
 
-    /**
-     * Удачный запрос списка должностей
-     */
     case types.FETCH_OCCUPATIONS_SUCCESS:
       return {
         ...state,
@@ -69,5 +64,4 @@ export default function occupations(state = initialState, action) {
     default:
       return state;
   }
-
 }

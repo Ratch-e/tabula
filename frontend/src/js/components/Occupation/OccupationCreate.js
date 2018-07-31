@@ -1,18 +1,17 @@
-import * as React from "react";
-import Header from "../../containers/Header/Header"
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import * as occupationActions from '../../actions/OccupationActions'
-import {Helmet} from "react-helmet";
-
+import * as React from 'react';
+import Header from '../../containers/Header/Header';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as occupationActions from '../../actions/OccupationActions';
+import { Helmet } from 'react-helmet';
 
 class OccupationCreate extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: ""
-    }
+      title: '',
+    };
   }
 
   /**
@@ -24,17 +23,24 @@ class OccupationCreate extends React.Component {
 
   generateOccupations() {
     const occupations = this.props.occupations.occupationsList;
-    const list = occupations.map((item, key) => <li className="list__item" key={key}><button className="button button_small" onClick={() => this.onRemoveClick(item._id)}>удалить</button>{item.title}</li>);
-    return <ul className="list">{list}</ul>
+    const list = occupations.map((item, key) => (
+      <li className="list__item" key={key}>
+        <button className="button button_small" onClick={() => this.onRemoveClick(item._id)}>
+          удалить
+        </button>
+        {item.title}
+      </li>
+    ));
+    return <ul className="list">{list}</ul>;
   }
 
   handleTitleChange(e) {
-    this.setState({title: e.target.value});
+    this.setState({ title: e.target.value });
   }
 
   onSaveClick() {
     this.props.occupationActions.addOccupation(this.state.title);
-    this.setState({title: ''});
+    this.setState({ title: '' });
   }
 
   onRemoveClick(id) {
@@ -44,13 +50,12 @@ class OccupationCreate extends React.Component {
   render() {
     return (
       <div className="page">
-
         <Helmet>
           <meta charSet="utf-8" />
           <title>Должности - Tabula</title>
         </Helmet>
 
-        <Header/>
+        <Header />
         <div className="content profile">
           <div className="profile__input-row">
             <label className="label">
@@ -59,30 +64,34 @@ class OccupationCreate extends React.Component {
                 className="input"
                 type="text"
                 value={this.state.title}
-                onChange={this.handleTitleChange.bind(this)}></input>
+                onChange={this.handleTitleChange.bind(this)}
+              />
             </label>
 
-            <button className="button" onClick={this.onSaveClick.bind(this)}>Сохранить</button>
+            <button className="button" onClick={this.onSaveClick.bind(this)}>
+              Сохранить
+            </button>
           </div>
-          <div>
-            {this.generateOccupations()}
-          </div>
+          <div>{this.generateOccupations()}</div>
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
-    occupations: state.occupations
-  }
+    occupations: state.occupations,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    occupationActions: bindActionCreators(occupationActions, dispatch)
-  }
+    occupationActions: bindActionCreators(occupationActions, dispatch),
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OccupationCreate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(OccupationCreate);
