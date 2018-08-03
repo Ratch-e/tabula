@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import MainPage from './containers/MainPage/MainPage';
-import ProfileCreate from './components/Profile/ProfileCreate';
-import OccupationCreate from './components/Occupation/OccupationCreate';
-import Profile from './components/Profile/Profile';
-import Edit from './components/Profile/ProfileEdit';
-import Test from './components/Test/Test';
+import MainPage from './components/MainPage/MainPage';
+import ProfileCreate from './containers/Profile/ProfileCreate';
+import OccupationCreate from './containers/Occupation/OccupationCreate';
+import Profile from './containers/Profile/Profile';
+import Edit from './containers/Profile/ProfileEdit';
+import Test from './containers/Test/Test';
 
 const Routes = (props) => (
 

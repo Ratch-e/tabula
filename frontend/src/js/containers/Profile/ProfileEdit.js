@@ -1,11 +1,13 @@
 import * as React from 'react';
-import Header from '../../containers/Header/Header';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as personsAction from '../../actions/PersonsActions';
-import * as occupationAction from '../../actions/OccupationActions';
 import { Helmet } from 'react-helmet';
 import moment from 'moment';
+
+import Header from '../../components/Header/Header';
+
+import * as personsAction from '../../actions/PersonsActions';
+import * as occupationAction from '../../actions/OccupationActions';
 
 class ProfileEdit extends React.Component {
   constructor(props) {

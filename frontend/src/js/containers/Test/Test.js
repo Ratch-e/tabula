@@ -1,12 +1,14 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import Header from '../../containers/Header/Header';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
+
+import Header from '../../components/Header/Header';
+
 import * as personsAction from '../../actions/PersonsActions';
 import questions from '../../test-questions';
 import categories from '../../testCategories';
-import { Helmet } from 'react-helmet';
 
 class Test extends React.Component {
   constructor(props) {

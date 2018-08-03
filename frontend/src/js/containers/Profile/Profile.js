@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import Header from '../../containers/Header/Header';
-import Modal from '../Common/Modal';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as personsAction from '../../actions/PersonsActions';
 import Chart from 'chart.js';
 import _ from 'lodash';
 import moment from 'moment';
+
+import Header from '../../components/Header/Header';
+import Modal from '../Common/Modal';
+
+import * as personsAction from '../../actions/PersonsActions';
 import categories from '../../testCategories';
 
 class Profile extends React.Component {

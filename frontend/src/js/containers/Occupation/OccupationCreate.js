@@ -1,9 +1,10 @@
 import * as React from 'react';
-import Header from '../../containers/Header/Header';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as occupationActions from '../../actions/OccupationActions';
 import { Helmet } from 'react-helmet';
+
+import Header from '../../components/Header/Header';
+import * as occupationActions from '../../actions/OccupationActions';
 
 class OccupationCreate extends React.Component {
   constructor(props) {

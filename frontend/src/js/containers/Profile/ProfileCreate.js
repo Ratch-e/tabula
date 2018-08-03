@@ -1,9 +1,11 @@
 import * as React from 'react';
-import Header from '../../containers/Header/Header';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as personsAction from '../../actions/PersonsActions';
 import { Helmet } from 'react-helmet';
+
+import Header from '../../components/Header/Header';
+
+import * as personsAction from '../../actions/PersonsActions';
 
 class ProfileCreate extends React.Component {
   constructor(props) {

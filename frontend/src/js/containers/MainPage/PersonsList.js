@@ -4,8 +4,9 @@
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as personsAction from '../../actions/PersonsActions';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+
+import * as personsAction from '../../actions/PersonsActions';
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

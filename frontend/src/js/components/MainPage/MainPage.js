@@ -3,7 +3,7 @@
  */
 import * as React from "react";
 import Header from "../Header/Header"
-import PersonsList from "../../components/MainPage/PersonsList"
+import PersonsList from "../../containers/MainPage/PersonsList"
 
 class MainPage extends React.Component {
   render() {
