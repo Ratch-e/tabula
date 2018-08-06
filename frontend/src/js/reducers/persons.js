@@ -37,9 +37,6 @@ export default function persons(state = initialState, action) {
         error: null,
       };
 
-    /**
-     * Удачный запрос пользователей по апи
-     */
     case types.FETCH_PERSONS_SUCCESS:
       return {
         ...state,
@@ -57,9 +54,6 @@ export default function persons(state = initialState, action) {
         error: null,
       };
 
-    /**
-     * Удачный запрос профиля пользователя по апи
-     */
     case types.FETCH_PERSON_BY_ID_SUCCESS:
       return {
         ...state,

@@ -29,6 +29,9 @@
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
     "datatables.net": "^1.10.16",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^3.3.0",
@@ -37,6 +40,12 @@
     "react-bootstrap-table": "^4.3.1",
     "react-datatables": "0.0.2",
     "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.2.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../containers/Header/Header.js';
+import Header from './Header.js';
 import renderer from 'react-test-renderer';
 
 describe('Шапка', () => {
